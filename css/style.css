@@ -1,0 +1,736 @@
+@charset "utf-8";
+body {
+	background: white
+}
+input[type=text], input[type=password] {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+}
+
+#button {
+	background-color: #4CAF50;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+}
+
+button {
+	background-color: #021993;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+}
+
+	button:hover {
+		opacity: 0.8;
+	}
+
+.cancelbtn {
+	width: auto;
+	padding: 10px 18px;
+	background-color: #f44336;
+}
+
+.imgcontainer {
+	text-align: center;
+	margin: 24px 0 12px 0;
+	position: relative;
+}
+
+img.avatar {
+	width: 40%;
+	border-radius: 50%;
+}
+
+.container {
+	padding: 16px;
+}
+
+span.psw {
+	float: right;
+	padding-top: 16px;
+}
+
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgb(0,0,0);
+	background-color: rgba(0,0,0,0.4);
+	padding-top: 60px;
+}
+
+.modal-content {
+	background-color: #fefefe;
+	margin: 5% auto 15% auto;
+	border: 1px solid #888;
+	width: 80%;
+}
+
+.close {
+	position: absolute;
+	right: 25px;
+	top: 0;
+	color: #000;
+	font-size: 35px;
+	font-weight: bold;
+}
+
+	.close:hover,
+	.close:focus {
+		color: red;
+		cursor: pointer;
+	}
+
+.animate {
+	-webkit-animation: animatezoom 0.6s;
+	animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+	from {
+		-webkit-transform: scale(0)
+	}
+
+	to {
+		-webkit-transform: scale(1)
+	}
+}
+
+@keyframes animatezoom {
+	from {
+		transform: scale(0)
+	}
+
+	to {
+		transform: scale(1)
+	}
+}
+
+@media screen and (max-width: 300px) {
+	span.psw {
+		display: block;
+		float: none;
+	}
+
+	.cancelbtn {
+		width: 100%;
+	}
+}
+
+body, div, img, p, a, ul, li, h1, h2, h3, h4, h5, h6, form, input, button, label, textarea, span {
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	font-family: "微软雅黑";
+	display: block;
+}
+
+ul {
+	list-style-type: none;
+}
+
+a {
+	text-decoration: none;
+	color: #000;
+	font-size: 14px;
+}
+
+html {
+	overflow-x: hidden;
+}
+
+
+/*时间*/
+.top {
+	background: #021993;
+	height: 50px;
+}
+
+	.top .box {
+		width: 1200px;
+		height: 50px;
+		margin: 0 auto;
+	}
+
+		.top .box .right {
+			float: right;
+			line-height: 50px;
+		}
+
+			.top .box .right a, .top .box .right span {
+				display: inline-block;
+				color: #fff;
+				padding-left: 10px;
+			}
+
+
+/*导航*/
+.head {
+	height: 100px;
+}
+
+	.head .box {
+		width: 1200px;
+		height: 100px;
+		margin-top: 0;
+		margin-right: auto;
+		margin-bottom: 0;
+		margin-left: auto;
+	}
+
+		.head .box li a {
+			line-height: 100px;
+			font-size: 18px;
+			float: left;
+			padding-top: 0;
+			padding-right: 87px;
+			padding-bottom: 0;
+			padding-left: 87px;
+		}
+
+			.head .box li a:hover {
+				color: #021993;
+			}
+
+
+/*海报*/
+.banner {
+	position: relative;
+	height: 750px;
+	
+}
+	.banner .box {
+		position: absolute;
+		width: 100%;
+		height: 750px;
+		text-align:center;
+	}
+
+
+
+/*首页-图文焦点*/
+.news {
+	height: 345px;
+	padding: 100px 0 80px 0;
+}
+
+	.news .box {
+		width: 1200px;
+		height: 345px;
+		margin: 0 auto;
+	}
+
+		.news .box .left {
+			width: 600px;
+			float: left;
+			border-top: solid 1px #ccc;
+		}
+
+			.news .box .left a {
+				height: 345px;
+				border-bottom: solid 1px #ccc;
+			}
+
+				.news .box .left a span {
+					width: 600px;
+					font-size: 20px;
+					line-height: 24px;
+					padding-top: 10px;
+					color: #000;
+					
+				}
+
+				.news .box .left a:hover span {
+					color: #021993;
+				}
+
+				.news .box .left a p {
+					font-size: 14px;
+					line-height: 24px;
+					color: #888;
+					padding-top: 5px;
+				}
+
+.focus {
+	position: relative;
+	width: 550px;
+	height: 345px;
+	float: right;
+	overflow: hidden;
+}
+
+	.focus img {
+		width: 550px;
+		height: 345px;
+	}
+
+	.focus .shadow {
+		position: absolute;
+		bottom: 0;
+		left: 0px;
+		z-index: 10;
+		width: 550px;
+		height: 40px;
+		line-height: 40px;
+		background: rgba(0,0,0,0.6);
+		display: block;
+		text-align: left;
+	}
+
+		.focus .shadow a {
+			color: #fff;
+			overflow: hidden;
+			margin-left: 28px;
+		}
+
+	.focus .fbg {
+		bottom: 16px;
+		right: 5px;
+		position: absolute;
+		height: 8px;
+		text-align: center;
+		z-index: 200;
+	}
+
+	.focus .D1fBt i {
+		display: none;
+		font-style: normal;
+	}
+
+	.focus .D1fBt a {
+		position: relative;
+		display: inline;
+		width: 8px;
+		height: 8px;
+		margin: 0 5px;
+		float: left;
+		background: #fff;
+	}
+
+		.focus .D1fBt .current, .focus .D1fBt a:hover {
+			background: #021993;
+		}
+
+
+/*首页-1*/
+.main1 {
+	height: 625px;
+	overflow: hidden;
+}
+
+	.main1 .box {
+		width: 1200px;
+		margin: 0 auto;
+	}
+
+		.main1 .box h2 {
+			border-bottom: solid 3px #021993;
+			color: #021993;
+			line-height: 50px;
+			margin-bottom: 50px;
+			font-size: 30px;
+		}
+
+		.main1 .box a {
+			width: 380px;
+			height: 230px;
+			position: relative;
+			float: left;
+			margin-bottom: 30px;
+			transition: all 1s;
+			overflow: hidden;
+		}
+
+			.main1 .box a:hover img {
+				transition: all 1s;
+				transform: scale(1.05);
+			}
+
+			.main1 .box a span {
+				width: 100%;
+				line-height: 40px;
+				color: #fff;
+				font-size: 14px;
+				text-align: center;
+				background-color: rgba(0,0,0,0.5);
+				position: absolute;
+				bottom: 0;
+			}
+
+
+/*首页-2*/
+.main2 {
+	padding-top: 50px;
+	height: 310px;
+}
+
+	.main2 .box {
+		width: 1200px;
+		margin: 0 auto;
+	}
+
+		.main2 .box h2 {
+			border-bottom: solid 3px #021993;
+			color: #021993;
+			line-height: 50px;
+			font-size: 30px;
+		}
+
+		.main2 .box .left {
+			float: left;
+			width: 790px;
+			height: 308px;
+		}
+
+			.main2 .box .left ul {
+				float: left;
+				width: 380px;
+			}
+
+				.main2 .box .left ul li a {
+					width: 380px;
+					background: url(../img/icon1.jpg) left center no-repeat;
+					height: 50px;
+					border-bottom: solid 1px #ccc;
+					text-indent: 28px;
+					line-height: 50px;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+				}
+
+					.main2 .box .left ul li a:hover {
+						background: url(../img/icon2.jpg) left center no-repeat;
+						color: #021993;
+					}
+
+		.main2 .box .right {
+			float: right;
+			width: 380px;
+			height: 308px;
+			border-bottom: solid 1px #ccc;
+		}
+
+			.main2 .box .right a h3 {
+				font-size: 18px;
+				font-weight: normal;
+				padding: 13px 0;
+				text-align: center;
+				border-bottom: solid 1px #ccc;
+			}
+
+			.main2 .box .right a p {
+				font-size: 14px;
+				line-height: 28px;
+				text-indent: 28px;
+				text-align: justify;
+				padding-top: 15px;
+			}
+
+
+/*首页-3*/
+.main3 {
+	padding-top: 80px;
+	height: 900px;
+}
+
+	.main3 .box {
+		width: 1200px;
+		margin: 0 auto;
+	}
+
+		.main3 .box h2 {
+			border-bottom: solid 3px #021993;
+			color: #021993;
+			line-height: 50px;
+			margin-bottom: 50px;
+			font-size: 30px;
+		}
+
+		.main3 .box a {
+			width: 570px;
+			height: 320px;
+			float: left;
+			margin-right: 15px;
+			overflow: hidden;
+			margin-left: 15px;
+		}
+
+			.main3 .box a:hover img {
+				transition: all 1s;
+				transform: scale(1.05);
+			}
+
+			.main3 .box a span {
+				width: 100%;
+				line-height: 40px;
+				color: #000;
+				font-size: 14px;
+				text-align: center;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+
+.end {
+	background: #021993;
+	height: 100px;
+	margin-top: 200px;
+}
+
+	.end .box {
+		width: 1200px;
+		margin: 0 auto;
+		position: relative;
+	}
+
+		.end .box li {
+			line-height: 100px;
+			color: #fff;
+			font-size: 14px;
+			position: absolute;
+			left: 600px;
+			top: 3px;
+		}
+
+
+
+.route {
+	clear: both;
+	height: 80px;
+}
+
+	.route .box {
+		width: 1200px;
+		margin: 0 auto;
+	}
+
+		.route .box a, .route .box span {
+			float: left;
+			font-size: 14px;
+			line-height: 80px;
+		}
+
+			.route .box a:hover {
+				color: #021993;
+			}
+
+
+/*2*/
+.list {
+	clear: both;
+	height: 750px;
+}
+
+	.list .box {
+		width: 1200px;
+		height: 700px;
+		margin-top: 0;
+		margin-right: auto;
+		margin-bottom: 0;
+		margin-left: auto;
+	}
+
+		.list .box p {
+			margin: 20px;
+			line-height: 28px;
+			text-indent: 40px;
+			letter-spacing: 3px;
+		}
+
+		.list .box h1 {
+			margin: 20px;
+			line-height: 30px;
+			text-indent: 40px;
+		}
+
+		.list .box h2 {
+			border-bottom: solid 3px #021993;
+			color: #021993;
+			line-height: 50px;
+			text-align: center;
+			font-size: 30px;
+		}
+
+/*4*/
+.one {
+	clear: both;
+	height: 2200px;
+}
+
+	.one .box {
+		width: 1200px;
+		height: 2200px;
+		margin-top: 0;
+		margin-right: auto;
+		margin-bottom: 0;
+		margin-left: auto;
+	}
+
+		.one .box h2 {
+			height: 50px;
+			border-bottom: solid 3px #021993;
+			color: #021993;
+			line-height: 50px;
+			text-align: center;
+			font-size: 30px;
+		}
+
+		.one .box .left, .one .box .right {
+			padding-top: 50px;
+			height: 300px;
+			overflow: hidden;
+		}
+
+			.one .box .left img {
+				width: 400px;
+				height: 300px;
+				float: left;
+			}
+
+			.one .box .left .nr {
+				width: 750px;
+				height: 299px;
+				float: right;
+				position: relative;
+				border-bottom: solid 1px #ccc;
+			}
+
+				.one .box .left .nr h3, .one .box .right .nr h3 {
+					font-size: 22px;
+					font-weight: normal;
+					padding-top: 35px;
+				}
+
+				.one .box .left .nr p, .one .box .right .nr p {
+					font-size: 14px;
+					padding-top: 20px;
+					text-indent: 28px;
+					text-align: justify;
+					line-height: 28px;
+				}
+
+				.one .box .left .nr a, .one .box .right .nr a {
+					width: 100px;
+					height: 40px;
+					border: solid 1px #000;
+					border-radius: 10px;
+					text-align: center;
+					line-height: 40px;
+					position: absolute;
+					right: 0px;
+					bottom: 35px;
+				}
+
+					.one .box .left .nr a:hover, .one .box .right .nr a:hover {
+						border: solid 1px #021993;
+						background: #021993;
+						color: #fff;
+					}
+
+			.one .box .right img {
+				width: 400px;
+				height: 300px;
+				float: right;
+			}
+
+			.one .box .right .nr {
+				width: 750px;
+				height: 299px;
+				float: left;
+				position: relative;
+				border-bottom: solid 1px #ccc;
+			}
+
+/*4*/
+.two {
+	clear: both;
+	height: 400px;
+}
+
+	.two .box {
+		width: 1200px;
+		margin: 0 auto;
+	}
+
+		.two .box h2 {
+			height: 50px;
+			border-bottom: solid 3px #021993;
+			color: #021993;
+			line-height: 50px;
+			text-align: center;
+			font-size: 30px;
+			margin-bottom: 50px;
+		}
+
+		.two .box a {
+			width: 280px;
+			height: 280px;
+			float: left;
+			padding-right: 26px;
+			padding-bottom: 30px;
+			position: relative;
+			overflow: hidden;
+		}
+
+			.two .box a .nr {
+				width: 280px;
+				height: 280px;
+				background-color: rgba(0,0,0,0);
+				position: absolute;
+				transform: translateY(280px);
+				ransition: all 1s;
+				z-index: 2;
+			}
+
+			.two .box a:hover .nr {
+				transform: translateY(0px);
+				ransition: all 1s;
+				background-color: rgba(0,0,0,0.5);
+			}
+
+			.two .box a .nr span {
+				width: 210px;
+				margin: 0 auto;
+				text-align: center;
+				color: #fff;
+				font-size: 16px;
+				padding-top: 35px;
+				font-weight: bold;
+			}
+
+			.two .box a .nr p {
+				width: 240px;
+				margin: 0 auto;
+				color: #fff;
+				font-size: 14px;
+				text-indent: 28px;
+				line-height: 24px;
+				padding-top: 10px;
+				text-align: justify;
+			}
+
+body, li, span, p {
+	cursor: url(https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cursor/texto.cur),auto;
+}
+
+a {
+	background-color: transparent;
+	cursor: url(https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cursor/ayuda.cur),auto;
+}

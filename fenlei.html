@@ -1,0 +1,149 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>橙子民谣网</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/ku.js"></script>
+    <script type="text/javascript">
+        if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
+            alert('朋友，上古浏览器不支持呢~');
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery.fancybox@2.1.5/source/jquery.fancybox.js"></script>
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/instant.page@3.0.0/instantpage.js" type="module"></script>
+        <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.0/lazysizes.min.js" async></script>
+
+        <!-- 看板娘 -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+        <script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+
+        <!--鼠标点击效果-->
+        <script src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/js/maodian.js"></script>
+
+        <script type="text/javascript">
+            console.clear();
+            (function ($) {
+                $.fn.snow = function (options) {
+                    var $flake = $('<div id="snowbox" />').css({ 'position': 'absolute', 'z-index': '9999', 'top': '-50px' }).html('&#10052;'),
+                        documentHeight = $(document).height(),
+                        documentWidth = $(document).width(),
+                        defaults = {
+                            minSize: 10,
+                            maxSize: 20,
+                            newOn: 1000,
+                            flakeColor: "#AFDAEF" /* 此处可以定义雪花颜色，若要白色可以改为#FFFFFF */
+                        },
+                        options = $.extend({}, defaults, options);
+                    var interval = setInterval(function () {
+                        var startPositionLeft = Math.random() * documentWidth - 100,
+                            startOpacity = 0.5 + Math.random(),
+                            sizeFlake = options.minSize + Math.random() * options.maxSize,
+                            endPositionTop = documentHeight - 200,
+                            endPositionLeft = startPositionLeft - 500 + Math.random() * 500,
+                            durationFall = documentHeight * 10 + Math.random() * 5000;
+                        $flake.clone().appendTo('body').css({
+                            left: startPositionLeft,
+                            opacity: startOpacity,
+                            'font-size': sizeFlake,
+                            color: options.flakeColor
+                        }).animate({
+                            top: endPositionTop,
+                            left: endPositionLeft,
+                            opacity: 0.2
+                        }, durationFall, 'linear', function () {
+                            $(this).remove()
+                        });
+                    }, options.newOn);
+                };
+            })(jQuery);
+            $(function () {
+                $.fn.snow({
+                    minSize: 5, /* 定义雪花最小尺寸 */
+                    maxSize: 50,/* 定义雪花最大尺寸 */
+                    newOn: 350  /* 定义密集程度，数字越小越密集 */
+                });
+            });
+
+            // 浏览器特殊标题
+            var OriginTitle = document.title;
+            var titleTime;
+            document.addEventListener('visibilitychange', function () {
+                if (document.hidden) {
+                    // $('[rel="icon"]').attr('href', "/funny.ico");
+                    document.title = '橙子民谣网';
+                    clearTimeout(titleTime);
+                }
+                else {
+                    //$('[rel="icon"]').attr('href', "/favicon.ico");
+                    document.title = OriginTitle + '--我有民谣你有故事吗';
+                    titleTime = setTimeout(function () {
+                        document.title = OriginTitle;
+                    }, 2000);
+                }
+            });
+        </script>
+        <script src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/js/maodian.js"></script>
+    </div>
+    <div id="body-wrap">
+        <div class="top">
+            <div class="box">
+                <span style="float:left;line-height:50px;color:#fff;" id="date">
+                    <script>setInterval("date.innerHTML=new Date().toLocaleString()+'星期'+'日一二三四五六'.charAt(new Date().getDay());", 1000);</script>
+                </span>
+            </div>
+        </div>
+
+        <div class="head">
+            <div class="box">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="fenlei.html">分类</a></li>
+                    <li><a href="gushi.html">故事</a></li>
+                    <li><a href="geshou.html">歌手</a></li>
+                    <li><a href="me.html">作者</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="banner">
+            <div class="box">
+                <img src="img/banner.png" />
+            </div>
+        </div>
+        <div class="route">
+            <div class="box">
+                <span>您当前位置：</span><a href="index.html">首页</a><span> > 分类</span>
+            </div>
+        </div>
+
+        <div class="list">
+            <div class="box">
+                <h2>
+                    历史变迁，斗转星移。你看，每一秒的光阴，都有故事；无论在哪，都能听到最爱的那首歌
+                </h2>
+
+                <h1 style="font-size: 25px; font-family: 'Arial Black', Gadget, sans-serif;">中国民谣的缠绵悱恻、英国民谣的淳朴、美国民谣的反叛不羁，都表现了强烈的民族气质与色彩。</h1>
+                <p style="font-size: 16px; font-family: 'Arial Black', Gadget, sans-serif;"></p>
+                <p style="font-size: 20px; font-family: 'Arial Black', Gadget, sans-serif;">中国民谣：中国民谣，并不是一个乐理学上的定义，而更倾向于社会学定义。可以粗浅地认为，民谣即为流行音乐，或商品音乐。是一种在民间广泛传播的，以娱乐性和商品性为主要特性的音乐作品。它区别于以追求高雅艺术体验为目的而创作而局限于有一定音乐修养的群体中的音乐作品。民谣的特点决定了它广泛的受众面，也让许多民众在毫无乐理知识的情况下，充分享受音乐所带来的美好体验，因而得以广泛传播。这也是民谣的优势所在。</p>
+                <p style="font-size: 10px; font-family: 'Arial Black', Gadget, sans-serif;"></p>
+                <p style="font-size: 20px; font-family: 'Arial Black', Gadget, sans-serif;">英国民谣：起源于中世纪末期，即12、13世纪，兴盛于14、15世纪，复兴于18、19世纪，是英国最古老的诗歌形式之一。它主要包括两大部分，英格兰民谣和苏格兰民谣。凯特·斯蒂文斯(Cat Stevens)是英国民谣摇滚的代表人物，1947年7月21日生于伦敦，原名史蒂文·乔治乌(Steven Georgiou)。当他成为一名国际明星之后，于1979年皈依宗教并放弃了他的音乐事业。60年代中期，斯蒂文斯在哈默史密斯大学期间就开始自己创作歌曲并于1966年以一首《我喜欢我的狗》(I Love My Dog)走红。1968年，斯蒂文斯感染了肺结核，迫使他暂时停止了音乐生涯。1970年，他以专辑《Mona Bone Jakon》重返乐坛，并受到一致好评，其中还产生了一首热门歌曲《德，阿班维尔太太》(Lady D'Arbanville)。以后，他继续推出专辑《舵手的茶叶》(Tea of the Tillerman，1971)、《数字》(Numbers，1975)，《Izitso》(1977)和《回到地球》(Back to Earth，1978)均获得一定的成绩。</p>
+                <p style="font-size: 10px; font-family: 'Arial Black', Gadget, sans-serif;"></p>
+                <p style="font-size: 20px; font-family: 'Arial Black', Gadget, sans-serif;">美国民谣：20世纪60年代的美国是一个充满了动乱和麻烦的时期。肯尼迪于1963年被暗杀以后，约翰逊继任总统。局势动荡不定，社会问题层出不穷。年轻人对现实社会的强烈不满，许多人对现代化工业社会的发展前景产生怀疑。在这种情况下，很多年轻人离开了大城市、离开家庭，来到郊区或乡下，组成社团，过着一种简朴的群体生活。他们反对权威、反对传统(包括传统文化)、反对既有秩序。他们在服装和发式方面也反其道而行之，越古怪越好，而且还普遍服用致幻药物。因此他们得到一个外号叫"嬉皮士"(Hippies)，指生活在既定社会之外的不顺从的青年人。最后，性解放也是60年代的一个突出现象。对"性"的传统观念产生怀疑和轻视、不合法的同居被认为是一种可以替代结婚的生活方式。"自由"两字的含义不仅意味着要结束种族歧视，也意味着对上一辈性观念的反叛。</p>
+
+            </div>
+
+        </div>
+    </div>
+    <div style="margin-top:50px;" class="end">
+        <div class="box">
+
+        </div>
+    </div>
+</body>
+</html>

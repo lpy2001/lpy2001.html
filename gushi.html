@@ -1,0 +1,212 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>橙子民谣网</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/ku.js"></script>
+</head>
+<body>
+    <div>
+        <!--鼠标点击效果-->
+        <script src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/js/maodian.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery.fancybox@2.1.5/source/jquery.fancybox.js"></script>
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/instant.page@3.0.0/instantpage.js" type="module"></script>
+        <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.0/lazysizes.min.js" async></script>
+
+        <!-- 看板娘 -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+        <script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+
+        <script type="text/javascript">
+            console.clear();
+
+
+
+            (function ($) {
+                $.fn.snow = function (options) {
+                    var $flake = $('<div id="snowbox" />').css({ 'position': 'absolute', 'z-index': '9999', 'top': '-50px' }).html('&#10052;'),
+                        documentHeight = $(document).height(),
+                        documentWidth = $(document).width(),
+                        defaults = {
+                            minSize: 10,
+                            maxSize: 20,
+                            newOn: 1000,
+                            flakeColor: "#AFDAEF" /* 此处可以定义雪花颜色，若要白色可以改为#FFFFFF */
+                        },
+                        options = $.extend({}, defaults, options);
+                    var interval = setInterval(function () {
+                        var startPositionLeft = Math.random() * documentWidth - 100,
+                            startOpacity = 0.5 + Math.random(),
+                            sizeFlake = options.minSize + Math.random() * options.maxSize,
+                            endPositionTop = documentHeight - 200,
+                            endPositionLeft = startPositionLeft - 500 + Math.random() * 500,
+                            durationFall = documentHeight * 10 + Math.random() * 5000;
+                        $flake.clone().appendTo('body').css({
+                            left: startPositionLeft,
+                            opacity: startOpacity,
+                            'font-size': sizeFlake,
+                            color: options.flakeColor
+                        }).animate({
+                            top: endPositionTop,
+                            left: endPositionLeft,
+                            opacity: 0.2
+                        }, durationFall, 'linear', function () {
+                            $(this).remove()
+                        });
+                    }, options.newOn);
+                };
+            })(jQuery);
+            $(function () {
+                $.fn.snow({
+                    minSize: 5, /* 定义雪花最小尺寸 */
+                    maxSize: 50,/* 定义雪花最大尺寸 */
+                    newOn: 350  /* 定义密集程度，数字越小越密集 */
+                });
+            });
+
+            // 浏览器特殊标题
+            var OriginTitle = document.title;
+            var titleTime;
+            document.addEventListener('visibilitychange', function () {
+                if (document.hidden) {
+                    // $('[rel="icon"]').attr('href', "/funny.ico");
+                    document.title = '橙子民谣网';
+                    clearTimeout(titleTime);
+                }
+                else {
+                    //$('[rel="icon"]').attr('href', "/favicon.ico");
+                    document.title = OriginTitle + '--我有民谣你有故事吗';
+                    titleTime = setTimeout(function () {
+                        document.title = OriginTitle;
+                    }, 2000);
+                }
+            });
+        </script>      
+    </div>
+    <div id="body-wrap">
+        <div class="top">
+            <div class="box">
+                <span style="float:left;line-height:50px;color:#fff;" id="date">
+                    <script>setInterval("date.innerHTML=new Date().toLocaleString()+'星期'+'日一二三四五六'.charAt(new Date().getDay());", 1000);</script>
+                </span>
+            </div>
+        </div>
+
+        <div class="head">
+            <div class="box">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="fenlei.html">分类</a></li>
+                    <li><a href="gushi.html">故事</a></li>
+                    <li><a href="geshou.html">歌手</a></li>
+                    <li><a href="me.html">作者</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="banner">
+            <div class="box">
+		<img src="img/banner.png" />
+            </div>
+        </div>
+        <div class="route">
+            <div class="box">
+                <span>您当前位置：</span><a href="index.html">首页</a><span> > 故事</span>
+            </div>
+        </div>
+
+        <div class="one">
+            <div class="box">
+                <h2>如果在那一瞬间，你我感同身受。</h2>
+		<script type="text/javascript">
+			// 多个音频时播放一个
+			const audios = document.getElementsByTagName("audio");
+			// 暂停函数
+			function pauseAll() {
+				var self = this;
+				[].forEach.call(audios, function(i) {
+					// 将audios中其他的audio全部暂停
+					i !== self && i.pause();
+				})
+			}
+
+			// 给play事件绑定暂停函数
+			;
+			[].forEach.call(audios, function(i) {
+				i.addEventListener('play', pauseAll.bind(i));
+			})
+		</script>
+                <div class="left" id="1">
+                    <img src="http://p2.music.126.net/zadybn23B1InJL953JXBlg==/109951164463169183.jpg" alt="" />
+                    <div class="nr">
+                        <h3>《醒》</h3>
+                        <p>拉上窗帘睡了一下午，醒的时候屋子里很暗，只有从缝隙里透进来的一点点光，手机里没有新的消息，没有想看的剧，没有想吃的零食，甚至找不到打发时间的东西，躺在床上，脑子里空空的，成长的代价好像是在不知不觉中丢失了一些快乐，或者说，不再那么容易快乐。</p>
+                        <p style="text-align:right">——网易云热评</p>
+                        <audio controls src="http://music.163.com/song/media/outer/url?id=1400616256.mp3"></audio>
+                        <a href="https://music.163.com/#/song?id=1400616256">了解更多</a>
+                    </div>
+                </div>
+                <div class="right" id="2">
+                    <img src="http://p1.music.126.net/z-7UNkihJb3vR5XSHA_cXg==/109951164385789544.jpg" alt="" />
+                    <div class="nr">
+                        <h3>《清清》</h3>
+                        <p>当我们再相见，一起晒晒太阳拍拍照吧。想吃火锅，喝奶茶，穿好看的衣服，想吹吹晚风，面对面聊天，大口呼吸新鲜空气。想一切如常，万事顺遂。</p>
+                        <p style="text-align:right">——网易云热评</p>
+                        <audio controls src="http://music.163.com/song/media/outer/url?id=1392963469.mp3"></audio>
+                        <a href="https://music.163.com/#/song?id=1392963469">了解更多</a>
+                    </div>
+                </div>
+                <div class="left" id="3">
+                    <img src="http://p2.music.126.net/DSTg1dR7yKsyGq4IK3NL8A==/109951163046050093.jpg" alt="" />
+                    <div class="nr">
+                        <h3>房东的猫《云烟成雨》</h3>
+                        <p>喜欢上你不在我计划之中，只是刚好发生，不记得第一次见面你穿了什么，不记得第一次的对话，因为喜欢你是我之前没想到的。</p>
+                        <p style="text-align:right">——网易云热评</p>
+                        <a href="https://music.163.com/#/song?id=513360721">了解更多</a>
+                        <audio controls src="http://music.163.com/song/media/outer/url?id=513360721.mp3"></audio>
+                    </div>
+                </div>
+                <div class="right" id="4">
+                    <img src="http://p1.music.126.net/LOTxqRjFm03VJEOHJbUqMw==/109951165944804127.jpg" alt="" />
+                    <div class="nr">
+                        <h3>《这世界那么多人》</h3>
+                        <p>“与我长跑九年的女友就要嫁给我了”</p>
+                        <p style="text-align:right">——网易云热评</p>
+                        <a href="https://music.163.com/#/song?id=1842025914">了解更多</a>
+                        <audio controls src="http://music.163.com/song/media/outer/url?id=1842025914.mp3"></audio>
+                    </div>
+                </div>
+                <div class="left" id="5">
+                    <img src="http://p2.music.126.net/gFrdBKSxScbJgprv-bUvvA==/109951163872392161.jpg" alt="《无妨》" />
+                    <div class="nr">
+                        <h3>《无妨》</h3>
+                        <p>突然很喜欢惊鸿一瞥这个词，一见钟情太肤浅，日久生情太苍白，别人眉来眼去，我呀只偷看你一眼。</p>
+                        <p style="text-align:right">——网易云热评</p>
+                        <a href="https://music.163.com/#/song?id=1346832497">了解更多</a>
+                        <audio controls src="http://music.163.com/song/media/outer/url?id=1346832497.mp3"></audio>
+                    </div>
+                </div>
+                <div class="right" id="6">
+                    <img src="http://p2.music.126.net/yVmtE5RFcJ1fhv-ivuyuRw==/109951164075300143.jpg" alt="" />
+                    <div class="nr">
+                        <h3>《孤身》</h3>
+                        <p>要变得温柔和强大，就算哪天突然孤身一人，也能平静地活下去，不至于崩溃 。</p>
+                        <p style="text-align:right">——网易云热评</p>
+                        <a href="https://music.163.com/#/song?id=1365393542https://music.163.com/#/song?id=1365393542">了解更多</a>
+                        <audio controls src="http://music.163.com/song/media/outer/url?id=1365393542.mp3"></audio>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="end">
+        <div class="box">
+
+        </div>
+    </div>
+</body>
+</html>

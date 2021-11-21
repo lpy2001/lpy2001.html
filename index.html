@@ -1,0 +1,240 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>橙子民谣网</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/ku.js"></script>
+    <script>
+        function myFunction() {
+            alert("登录成功");
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery.fancybox@2.1.5/source/jquery.fancybox.css">
+    <script type="text/javascript">
+        if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
+            alert('朋友，上古浏览器不支持呢~');
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery.fancybox@2.1.5/source/jquery.fancybox.js"></script>
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/instant.page@3.0.0/instantpage.js" type="module"></script>
+        <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.0/lazysizes.min.js" async></script>
+        <!-- aplayer、meting -->
+        <!-- require APlayer -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+        <!-- require MetingJS -->
+        <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+        <!-- nplayer -->
+        <script src="https://unpkg.com/nplayer@latest/dist/index.min.js"></script>
+
+        <!-- 看板娘 -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+        <script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+
+        <!--鼠标点击效果-->
+        <script src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/js/maodian.js"></script>
+
+        <script type="text/javascript">
+            console.clear();
+
+
+
+            (function ($) {
+                $.fn.snow = function (options) {
+                    var $flake = $('<div id="snowbox" />').css({ 'position': 'absolute', 'z-index': '9999', 'top': '-50px' }).html('&#10052;'),
+                        documentHeight = $(document).height(),
+                        documentWidth = $(document).width(),
+                        defaults = {
+                            minSize: 10,
+                            maxSize: 20,
+                            newOn: 1000,
+                            flakeColor: "#AFDAEF" /* 此处可以定义雪花颜色，若要白色可以改为#FFFFFF */
+                        },
+                        options = $.extend({}, defaults, options);
+                    var interval = setInterval(function () {
+                        var startPositionLeft = Math.random() * documentWidth - 100,
+                            startOpacity = 0.5 + Math.random(),
+                            sizeFlake = options.minSize + Math.random() * options.maxSize,
+                            endPositionTop = documentHeight - 200,
+                            endPositionLeft = startPositionLeft - 500 + Math.random() * 500,
+                            durationFall = documentHeight * 10 + Math.random() * 5000;
+                        $flake.clone().appendTo('body').css({
+                            left: startPositionLeft,
+                            opacity: startOpacity,
+                            'font-size': sizeFlake,
+                            color: options.flakeColor
+                        }).animate({
+                            top: endPositionTop,
+                            left: endPositionLeft,
+                            opacity: 0.2
+                        }, durationFall, 'linear', function () {
+                            $(this).remove()
+                        });
+                    }, options.newOn);
+                };
+            })(jQuery);
+            $(function () {
+                $.fn.snow({
+                    minSize: 5, /* 定义雪花最小尺寸 */
+                    maxSize: 50,/* 定义雪花最大尺寸 */
+                    newOn: 350  /* 定义密集程度，数字越小越密集 */
+                });
+            });
+
+            // 浏览器特殊标题
+            var OriginTitle = document.title;
+            var titleTime;
+            document.addEventListener('visibilitychange', function () {
+                if (document.hidden) {
+                    // $('[rel="icon"]').attr('href', "/funny.ico");
+                    document.title = '橙子民谣网';
+                    clearTimeout(titleTime);
+                }
+                else {
+                    //$('[rel="icon"]').attr('href', "/favicon.ico");
+                    document.title = OriginTitle + '--我有民谣你有故事吗';
+                    titleTime = setTimeout(function () {
+                        document.title = OriginTitle;
+                    }, 2000);
+                }
+            });
+        </script>
+    </div>
+    <div id="body-wrap">
+        <div class="top">
+            <div class="box">
+                <span style="float:left;line-height:50px;color:#fff;" id="date">
+                    <script>setInterval("date.innerHTML=new Date().toLocaleString()+'星期'+'日一二三四五六'.charAt(new Date().getDay());", 1000);</script>
+                </span>
+                <button onclick="document.getElementById('id01').style.display='block'" style="width:50px; position: absolute;right: 10px;top:14px;">登录</button>
+            </div>
+            <div>
+                <div id="id01" class="modal">
+                    <form class="modal-content animate" action="#">
+                        <div class="container">
+                            <label><strong>用户名</strong></label>
+                            <input type="text" placeholder="请输入用户名" name="uname" required>
+                            <label><b>密码</b></label>
+                            <input type="password" placeholder="请输入密码" name="psw" required>
+                            <a href="#"><input onclick="myFunction()" type="submit" id="button" value="登录" /></a>
+                            <input type="checkbox" checked="checked"> 记住我
+                        </div>
+                        <div class="container" style="background-color:#f1f1f1">
+                            <span class="psw">没有账号 <a href="#">注册一个</span>
+                            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">取消</button>
+                            <span class="psw"><a href="#">忘记密码?</a></span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="head">
+            <div class="box">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="fenlei.html">分类</a></li>
+                    <li><a href="gushi.html">故事</a></li>
+                    <li><a href="geshou.html">歌手</a></li>
+                    <li><a href="me.html">作者</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="banner">
+            <div class="box">
+                <img src="img/banner.png" />
+            </div>
+        </div>
+
+        <div class="news">
+            <div class="box">
+                <div class="left">
+                    <a href="#">
+                        <span>于此世界，唯有民谣和纯粹的爱才能抹去残留的黑白，从此不再迷茫，充满希望。橙子民谣网，在音乐中倾听你的故事。</span>
+                        <p>
+                            <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=600 height=280 src="https://music.163.com/outchain/player?type=0&id=7077945972&auto=1&height=280"></iframe>
+                        </p>
+                    </a>
+                </div>
+                <div id="fsD1" class="focus">
+                    <div id="D1pic1" class="fPic">
+
+                        <div class="fcon">
+                            <a href="https://bing.ioliu.cn/"><img src="https://api.sunweihu.com/api/bing1/api.php" /></a>
+                            <span class="shadow"><a href="https://bing.ioliu.cn/">每日一图</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main1">
+            <div class="box">
+                <h2>歌单推荐</h2>
+                <a href="https://music.163.com/#/playlist?id=6666416916"><img src="http://p2.music.126.net/8ITFoColYMSNFzBiwdzKHw==/109951165813966380.jpg?param=380y230" alt="" /><span>[迷幻民谣] 沉溺于诗意幻觉 </span></a>
+                <a style="margin:0 30px;" href="https://music.163.com/#/playlist?id=6630486540"><img src="http://p2.music.126.net/yFG0Ia1JCLo7x2_EnfkHLA==/109951165854685117.jpg?param=380y230" alt="" /><span>[凯尔特民谣] 美妙奇异的凯尔特世界</span></a>
+                <a href="https://music.163.com/#/playlist?id=6666506290"><img src="http://p2.music.126.net/RNTdlMryq8_0QQoKEqsB7w==/109951165813954639.jpg?param=380y230" alt="" /><span>[民谣复兴] 聆听人文主义的吟唱</span></a>
+                <a href="https://music.163.com/#/playlist?id=6845593381"><img src="http://p2.music.126.net/wAJL_9CYpzPBrZRf1JpNjw==/109951166153537612.jpg?param=380y230" alt="" /><span>[日本民谣] 歌声轻柔 海风轻拂 一起散步吧</span></a>
+                <a style="margin:0 30px;" href="https://music.163.com/#/playlist?id=5320294514"><img src="http://p2.music.126.net/0O4N_s_R07Mcj0KtCEerbw==/109951166035813957.jpg?param=380y230" alt="" /><span>[独立民谣] 城市喧嚣之外 我们要找到心绪的落脚</span></a>
+                <a href="https://music.163.com/#/playlist?id=6630316170"><img src="http://p2.music.126.net/Z301SVbB2Wd6vpyqp4DToQ==/109951166035809879.jpg?param=380y230" alt="" /><span>[北欧民谣] 清新澄澈的北欧风情</span></a>
+            </div>
+        </div>
+
+        <div class="main2">
+            <div class="box">
+                <div class="left">
+                    <h2>每日推歌</h2>
+                    <ul>
+                        <li><a href="#">01《从前慢》</a></li>
+                        <li><a href="#">02《儿时》</a></li>
+                        <li><a href="#">03《十月迷城》</a></li>
+                        <li><a href="#">04《我的名字叫做安》</a></li>
+                        <li><a href="#">05《恋恋风尘》</a></li>
+                    </ul>
+                    <ul style="margin-left:30px;">
+                        <li><a href="https://freetyst.nf.migu.cn/public%2Fproduct9th%2Fproduct42%2F2020%2F11%2F1618%2F2018%E5%B9%B406%E6%9C%8806%E6%97%A515%E7%82%B901%E5%88%86%E5%86%85%E5%AE%B9%E5%87%86%E5%85%A5%E6%91%A9%E7%99%BB%E5%A4%A9%E7%A9%BA999%E9%A6%96%2F%E5%85%A8%E6%9B%B2%E8%AF%95%E5%90%AC%2FMp3_64_22_16%2F69917703233180224.mp3?Key=bf980edb7d2c7d04&Tim=1637436954613&channelid=01&msisdn=80f96f63ae664de5b5de6c5549591a69">06《傲寒》马頔</a></li>
+                        <li><a href="https://freetyst.nf.migu.cn/public%2Fproduct8th%2Fproduct40%2F2020%2F05%2F2822%2F2018%E5%B9%B406%E6%9C%8806%E6%97%A515%E7%82%B901%E5%88%86%E5%86%85%E5%AE%B9%E5%87%86%E5%85%A5%E6%91%A9%E7%99%BB%E5%A4%A9%E7%A9%BA999%E9%A6%96%2F%E5%85%A8%E6%9B%B2%E8%AF%95%E5%90%AC%2FMp3_64_22_16%2F69917703197222614.mp3?Key=9f2f1e163e4af74a&Tim=1637437224746&channelid=01&msisdn=bb79259c224a4876872ae524ee96d032">07《玫瑰》贰佰</a></li>
+                        <li><a href="https://freetyst.nf.migu.cn/public%2Fproduct03%2F2017%2F09%2F20%2F2017%E5%B9%B409%E6%9C%8820%E6%97%A517%E7%82%B930%E5%88%86%E7%B4%A7%E6%80%A5%E5%86%85%E5%AE%B9%E5%87%86%E5%85%A5%E4%B8%AD%E5%8A%B2%E8%BF%9C%E4%B8%9C1%E9%A6%96%2F%E5%85%A8%E6%9B%B2%E8%AF%95%E5%90%AC%2FMp3_64_22_16%2F%E5%B0%8F%E5%B1%8B-%E8%B5%B5%E9%9B%B7.mp3?Key=7062d14187cb2278&Tim=1637437337129&channelid=01&msisdn=68829d3603f645f7b9ae2851bd32ba8a">08《小屋》赵雷</a></li>
+                        <li><a href="https://freetyst.nf.migu.cn/public%2Fproduct20%2F2018%2F10%2F11%2F2018%E5%B9%B401%E6%9C%8803%E6%97%A509%E7%82%B927%E5%88%86%E5%86%85%E5%AE%B9%E5%87%86%E5%85%A5%E4%B8%AD%E8%A7%86%E5%8D%8E%E5%BD%B158%E9%A6%96%2F%E5%85%A8%E6%9B%B2%E8%AF%95%E5%90%AC%2FMp3_64_22_16%2F63267005240.mp3?Key=e7af63e7d04d15f4&Tim=1637437410489&channelid=01&msisdn=2f3ee1b5d1fb45f3a2cc47de96233a18">09《香格里拉》黄玠</a></li>
+                        <li><a href="https://freetyst.nf.migu.cn/public%2Fringmaker01%2Fn16%2F2017%2F01%2F2013%E5%B9%B47%E6%9C%8812%E6%97%A5%E7%B4%A7%E6%80%A5%E5%87%86%E5%85%A5%E5%A4%A9%E5%A8%B1%E4%BC%A0%E5%AA%92%E8%AF%8D%E6%9B%B2%E9%A2%84%E7%95%9966%E9%A6%96%2F%E5%85%A8%E6%9B%B2%E8%AF%95%E5%90%AC%2FMp3_64_22_16%2F%E6%98%9F%E6%9C%9F%E5%A4%A9%28%E5%BF%AB%E4%B9%90%E7%94%B7%E5%A3%B0%29-%E7%99%BD%E5%86%AC%E5%86%AC.mp3?Key=8f33da83f338a45b&Tim=1637437483859&channelid=01&msisdn=6b8d98fe47f94c06bdf60be8e61b7be8">10《星期天(快乐男声)》子冬</a></li>
+                    </ul>
+                </div>
+                <div class="right">
+                    <h2>什么是民谣？</h2>
+                    <a href="https://baike.baidu.com/item/%E6%B0%91%E8%B0%A3/2974425">
+                        <h3>生活不只是眼前的苟且，还有诗和远方和田野</h3>
+                        <p>民间流行的、赋予民族色彩的歌曲，称为民谣或民歌。民谣的历史悠远，故其作者多不知名。民谣的内容丰富，有宗教的、爱情的、战争的、工作的，也有饮酒、舞蹈作乐、祭典等等。民谣表现一个民族的感情与习尚，因此各有其独特的音阶与情调风格。如法国民谣的蓬勃、意大利民谣的热情、英国民谣的淳朴、日本民谣的悲愤、西班牙民谣的狂放不羁、中国民谣的缠绵悱恻，都表现了强烈的民族气质与色彩。</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="main3">
+            <div class="box">
+                <h2>网易云热评</h2>
+                <a href="gushi.html#1"><img src="http://p2.music.126.net/zadybn23B1InJL953JXBlg==/109951164463169183.jpg?param=570y320" alt="" /><span>《醒》</span></a>
+                <a href="gushi.html#2"><img src="http://p1.music.126.net/z-7UNkihJb3vR5XSHA_cXg==/109951164385789544.jpg?param=570y320" alt="" /><span>《清清》</span></a>
+                <a href="gushi.html#3"><img src="http://p2.music.126.net/DSTg1dR7yKsyGq4IK3NL8A==/109951163046050093.jpg?param=570y320" alt="" /><span>房东的猫《云烟成雨》</span></a>
+                <a style="margin-right:0px;" href="gushi.html#4"><img src="http://p1.music.126.net/LOTxqRjFm03VJEOHJbUqMw==/109951165944804127.jpg?param=570y320" alt="" /><span>《这世界那么多人》</span></a>
+                <a href="gushi.html#5"><img src="http://p2.music.126.net/gFrdBKSxScbJgprv-bUvvA==/109951163872392161.jpg?param=570y320" alt="" /><span>《无妨》</span></a>
+                <a href="gushi.html#6"><img src="http://p2.music.126.net/yVmtE5RFcJ1fhv-ivuyuRw==/109951164075300143.jpg?param=570y320" alt="" /><span>《孤身》</span></a>
+            </div>
+        </div>
+    </div>
+    <div class="end">
+        <div class="box">
+
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/js/maodian.js"></script>
+</body>
+</html>
